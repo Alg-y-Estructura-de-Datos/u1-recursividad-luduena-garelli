@@ -1,9 +1,30 @@
 #include <iostream>
+
 using namespace std;
 
-int main() {
+int potenciaRecursiva(int base, int exponente)
+{
+  if (exponente == 0)
+  {
+    return 1;
+  }
+  else
+  {
+    return base * potenciaRecursiva(base, exponente - 1);
+  }
+}
 
-    cout << "Examen Final Prog 3" << endl;
+int main(int argc, char const *argv[])
+{
+  int base, exponente;
 
-    return 0;
+  cout << "Ingrese la base: ";
+  cin >> base;
+
+  cout << "Ingrese el exponente: ";
+  cin >> exponente;
+
+  cout << "El resultado de la potencia es: " << potenciaRecursiva(base, exponente) << endl;
+
+  return 0;
 }
